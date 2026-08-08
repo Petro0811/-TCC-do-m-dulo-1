@@ -1,0 +1,1 @@
+move_and_collide(hsp,vsp,obj_collision)
