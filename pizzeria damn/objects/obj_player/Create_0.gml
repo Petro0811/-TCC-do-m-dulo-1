@@ -1,4 +1,5 @@
-spd = 3
+state = "free"
+spd = 2.5
 up = noone;
 down = noone;
 right = noone;
