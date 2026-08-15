@@ -1,4 +1,12 @@
-depth = -y
+if obj_player.state = "spawn" or obj_player.state = "incutscene"
+{
+	depth = 0
+}
+
+else
+{
+	depth = -y
+}
 
 switch(state)
 {
@@ -40,7 +48,7 @@ switch(state)
 	}
 	y += _ypass
 	
-	if point_distance(x,y,obj_player.x,obj_player.y) <= 50
+	if point_distance(x,y,obj_player.x,obj_player.y) <= 50 && cd <= 0
 	{
 		attackingcd = attackingcdvalue
 		state = "attacking"
@@ -73,6 +81,7 @@ switch(state)
 	
 	case "attack":
 	
+	cd = cdvalue
 	mask_index = spr_enemy
 	state = "chasing"
 	
@@ -93,3 +102,4 @@ switch(state)
 }
 
 despawncd --;
+cd --;
